@@ -8,7 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Task3 extends AppCompatActivity {
     private Button btn1;
@@ -29,9 +30,17 @@ public class Task3 extends AppCompatActivity {
             public void onClick(View view) {
                 field1 = (EditText) findViewById(R.id.editTextNumberField);
                 result = (TextView) findViewById(R.id.textViewTask3Result);
-                String reverse = new StringBuffer(field1.getText().toString()).reverse().toString();
-                result.setText(reverse);
-                result.setTextColor(Color.rgb(0,160,0));
+                String reverse = field1.getText().toString();
+                ArrayList<Integer> abc = new ArrayList<Integer>();
+                for (String retval : reverse.split(",")) {
+                    abc.add(Integer.parseInt(retval));
+                    System.out.println(retval);
+                }
+                abc.sort(Collections.reverseOrder());
+                String res = abc.toString();
+//                result.setText(abc.toString());
+                result.setText(res.substring(1, res.length() - 1));
+                result.setTextColor(Color.rgb(0, 160, 0));
                 result.setTextSize(25);
             }
         });

@@ -1,12 +1,15 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Arrays;
 
 public class Task1 extends AppCompatActivity {
     private Button btn4;
@@ -34,18 +37,11 @@ public class Task1 extends AppCompatActivity {
                 double firstNum = Double.parseDouble(field1.getText().toString());
                 double secondNum = Double.parseDouble(field2.getText().toString());
                 double thirdNum = Double.parseDouble(field3.getText().toString());
-                double finalsum = 0;
-                if (firstNum > secondNum)
-                    finalsum = firstNum;
-                else if (secondNum > firstNum)
-                    finalsum = secondNum;
-                else if (thirdNum > firstNum)
-                    finalsum = thirdNum;
-                else if (thirdNum > secondNum)
-                    finalsum = thirdNum;
-                else
-                    finalsum = firstNum;
-                textView5.setText(Double.toString(finalsum));
+                double[] numbersf = new double[] {firstNum, secondNum, thirdNum};
+                Arrays.sort(numbersf);
+                textView5.setText(Double.toString(numbersf[1]));
+                textView5.setTextColor(Color.rgb(0, 160, 0));
+                textView5.setTextSize(25);
 
 //                int length = Integer.parseInt(num1.getText().toString());
 //                int width = Integer.parseInt(num2.getText().toString());
