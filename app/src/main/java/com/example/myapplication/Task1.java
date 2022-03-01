@@ -24,7 +24,6 @@ public class Task1 extends AppCompatActivity {
     }
 
     public void addListenerOnButton() {
-        textView5 = (TextView) findViewById(R.id.textView3);
         btn4 = (Button) findViewById(R.id.task1Button);
         field1 = (EditText) findViewById(R.id.editTextFirstNum);
         field2 = (EditText) findViewById(R.id.editTextSecondNum);
